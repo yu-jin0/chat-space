@@ -11,7 +11,7 @@
 ### アソシエーション
 - has_to :messages
 - has_to :users_groups
-- has_to :groupd , :through :users_groups
+- has_to :groups , :through :users_groups
 
 ## groups
 |Column|Type|Options|
@@ -27,7 +27,7 @@
 ## users_groups
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
+|users_id|integer|null: false, foreign_key: true|
 |groups_id|integer|null: false, foreign_key: true|
 
 ### アソシエーション
@@ -39,7 +39,7 @@
 |------|----|-------|
 |body|text|null: false|
 |image|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|users_id|integer|null: false, foreign_key: true|
 |groups_id|integer|null: false, foreign_key: true|
 
 ### アソシエーション
