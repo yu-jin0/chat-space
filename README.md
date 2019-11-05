@@ -34,7 +34,7 @@
 - belong_to :users
 - belong_to :groups
 
-##comments
+## comments
 |Column|Type|Options|
 |------|----|-------|
 |body|text|null: false|
@@ -42,6 +42,6 @@
 |user_id|integer|null: false, foreign_key: true|
 |groups_id|integer|null: false, foreign_key: true|
 
-###アソシエーション
+### アソシエーション
 - belong_to :users
 - belong_to :groups
