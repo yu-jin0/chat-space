@@ -9,20 +9,19 @@
 |password|string|null: false|
 
 ### アソシエーション
-- has_to :messages
-- has_to :users_groups
-- has_to :groups , :through :users_groups
+- has_many :messages
+- has_many :users_groups
+- has_many :groups , :through :users_groups
 
 ## groups
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false|
-|member|string|null: false|
+|name|string|null: false|
 
 ### アソシエーション
-- has_to :messages
-- has_to :users_groups
-- has_to :users
+- has_many :messages
+- has_many :users_groups
+- has_many :users, :through :users_groups
 
 ## users_groups
 |Column|Type|Options|
@@ -31,17 +30,17 @@
 |groups_id|integer|null: false, foreign_key: true|
 
 ### アソシエーション
-- belong_to :users
-- belong_to :groups
+- belong_to :user
+- belong_to :group
 
 ## comments
 |Column|Type|Options|
 |------|----|-------|
 |body|text|null: false|
-|image|string|null: false|
+|image|string|
 |users_id|integer|null: false, foreign_key: true|
 |groups_id|integer|null: false, foreign_key: true|
 
 ### アソシエーション
-- belong_to :users
-- belong_to :groups
+- belong_to :user
+- belong_to :group
