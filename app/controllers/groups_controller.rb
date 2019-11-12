@@ -5,6 +5,7 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
+    
 
   end
 
@@ -13,5 +14,12 @@ class GroupsController < ApplicationController
 
   def update
   end
+
+  private
+
+  def group_params
   
+  end
+
 end
+
