@@ -6,22 +6,22 @@ $(function(){
     let img = message.image ? `<img src= ${ message.image }>` : "";
 
     let html = `<div class="message">
-                <div class="message__upper-info">
-                <p class="message__upper-info__talker">
-                ${message.user_name}
-                </p>
-                <p class="message__upper-info__date">
-                ${message.date}
-                </p>
-                </div>
-                <p class="message__text">
-                </p>
-                <p class="message__text__content">
-                ${content}
-                </p>
-                <p>
-                ${img}
-                </p>
+                  <div class="message__upper-info">
+                    <p class="message__upper-info__talker">
+                    ${message.user_name}
+                    </p>
+                    <p class="message__upper-info__date">
+                    ${message.date}
+                    </p>
+                  </div>
+                  <p class="message__text">
+                  </p>
+                  <p class="message__text__content">
+                  ${content}
+                  </p>
+                  <p>
+                  ${img}
+                  </p>
                 </div>`
     return html;
   }
