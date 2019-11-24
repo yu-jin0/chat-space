@@ -1,11 +1,11 @@
 $(function(){
-  
+
   function buildData(message){
 
     let content = message.content ? `${ message.content }` : "";
     let img = message.image ? `<img src= ${ message.image }>` : "";
 
-    let html = `<div class="message">
+    let html = `<div class="message", data-message-id="${message.id}">
                   <div class="message__upper-info">
                     <p class="message__upper-info__talker">
                     ${message.user_name}
@@ -26,6 +26,29 @@ $(function(){
     return html;
   }
 
+  let reloadMessages = function(){
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
+      last_message_id = $('.message:last').data("message-id");
+      $.ajax({
+        url:"api/messages",
+        type: 'get',
+        dataType: 'json',
+        data: {id: last_message_id}
+      })
+      .done(function(messages){
+        let insertHTML = '';
+        messages.forEach(function(message){
+          insertHTML = buildData(message);
+          $('.messages').append(insertHTML);
+          $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+        })
+      })
+      .fail(function(){
+       alert('自動更新に失敗しました。');
+      });
+    }
+  };
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     let formData = new FormData(this);
@@ -45,12 +68,14 @@ $(function(){
       $('.messages').scrollTop( $('.messages')[0].scrollHeight );
     })
 
-    .fail(function(data){
+    .fail(function(){
       alert('エラーが発生したためメッセージは送信できませんでした。');
     })
 
-    .always(function(data){
+    .always(function(){
       $('.submit_btn').prop('disabled', false);
     })
   })
+  
+  setInterval(reloadMessages, 5000);
 });
