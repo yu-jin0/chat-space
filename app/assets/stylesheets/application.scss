@@ -19,8 +19,10 @@
 
   a{
     color: white;
-    text-decoration: none;
   }
+  a:link {
+    text-decoration: none;
+  }    
   
   .side-header{
     background-color: #253141;
