@@ -17,12 +17,14 @@
   color: white;
   float: left;
 
-  a{
+  a:visited {
     color: white;
+    text-decoration: none;
   }
   a:link {
+    color: white;
     text-decoration: none;
-  }    
+  }  
   
   .side-header{
     background-color: #253141;
