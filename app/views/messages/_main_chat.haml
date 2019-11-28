@@ -4,10 +4,10 @@
       %h2.main-header__left-box__current-group
         = @group.name
       %ul.main-header__left-box__member-list
-        Member :
+        Member：
         - @group.users.each do |user|
           %li.main-header__left-box__member-lift-member 
-            = user.name
+            =  user.name
             
     =link_to edit_group_path(@group.id) do
       %div.main-header__edit-btn Edit
