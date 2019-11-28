@@ -13,7 +13,7 @@
   %div.groups
     - current_user.groups.each do |group|
       .group
-        = link_to group_messages_path(group),class: "group_link"  do
+        = link_to group_messages_path(group) do
           %p.group__group-name 
             = group.name
           %p.group__latest-message 
