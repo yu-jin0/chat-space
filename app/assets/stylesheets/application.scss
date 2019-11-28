@@ -40,9 +40,6 @@
         li {
           margin-left: 0.3rem;
         }
-        a {
-          text-decoration: none ;
-        }
       }
     }
   }
@@ -61,6 +58,9 @@
       }
       &__latest-message{
         font-size: 11px;
+      }
+      p {
+        text-decoration: none;
       }
     }
   }
