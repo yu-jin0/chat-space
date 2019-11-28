@@ -91,6 +91,10 @@
       font-size: 12px;
       color: #999999;
       
+      &__member-lift-member{
+        display: inline-block;
+        padding-right: 5px;
+      }
     }
   }
   .main-header__edit-btn {
