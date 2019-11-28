@@ -84,15 +84,13 @@
       font-size: 20px;
       color: #333;
       margin-bottom: 15px;
+      margin-right: 10px;
     }
     &__member-list{
       display: flex;
       font-size: 12px;
       color: #999999;
-
-      &__member-lift-member {
-        margin-right: 5px;
-      }
+      
     }
   }
   .main-header__edit-btn {
