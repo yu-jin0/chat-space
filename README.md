@@ -41,6 +41,7 @@
 |users_id|integer|null: false, foreign_key: true|
 |groups_id|integer|null: false, foreign_key: true|
 
+
 ### アソシエーション
 - belong_to :user
 - belong_to :group
